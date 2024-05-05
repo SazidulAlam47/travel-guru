@@ -3,7 +3,7 @@
         "_id": 1,
         "name": "Cox's Bazar",
         "description": "Cox’s Bazar is a town on the southeast coast of Bangladesh. It’s known for its very long, sandy beachfront, stretching from Sea Beach in the north to Kolatoli Beach in the south. Aggameda Khyang monastery is home to bronze statues and centuries-old Buddhist manuscripts. South of town, the tropical rainforest of Himchari National Park has waterfalls and many birds. North, sea turtles breed on nearby Sonadia Island.",
-        "thumbnail_img": "/images/thumbnail/cox-bazar.jpg",
+        "thumbnail_img": "/images/thumbnail/cox-bazar.png",
         "portrait_img": "/images/portrait/cox-bazar.png",
         "map": "cox_bazar_map.jpg",
         "hotels": [
@@ -49,7 +49,7 @@
         "_id": 2,
         "name": "Sajek",
         "description": "Sajek Valley is an emerging tourist spot in Bangladesh situated among the hills of Kasalong range of mountains in Sajek Union, Baghaichhari Upazila in Rangamati District. The valley is 1,800 feet above sea level.",
-        "thumbnail_img": "/images/thumbnail/sajek.jpg",
+        "thumbnail_img": "/images/thumbnail/sajek.png",
         "portrait_img": "/images/portrait/sajek.jpg",
         "map": "sajek_map.jpg",
         "hotels": [
@@ -95,7 +95,7 @@
         "_id": 3,
         "name": "Sreemangal",
         "description": "Sreemangal is a town located in Moulvibazar District in Bangladesh, known as the 'Tea Capital of Bangladesh'. It is famous for its tea gardens, forests, and wildlife. The area has many tea estates including the largest one in South Asia.",
-        "thumbnail_img": "/images/thumbnail/sreemangal.jpg",
+        "thumbnail_img": "/images/thumbnail/sreemangal.png",
         "portrait_img": "/images/portrait/sreemangal.jpg",
         "map": "sreemangal_map.jpg",
         "hotels": [
@@ -141,7 +141,7 @@
         "_id": 4,
         "name": "Sundarbans",
         "description": "The Sundarbans is a mangrove area in the delta formed by the confluence of the Ganges, Brahmaputra, and Meghna Rivers in the Bay of Bengal. It spans from the Hooghly River in India's state of West Bengal to the Baleswar River in Bangladesh. The Sundarbans are intersected by a complex network of tidal waterways, mudflats, and small islands of salt-tolerant mangrove forests.",
-        "thumbnail_img": "/images/thumbnail/sundarban.jpg",
+        "thumbnail_img": "/images/thumbnail/sundarban.png",
         "portrait_img": "/images/portrait/sundarban.jpg",
         "map": "sundarbans_map.jpg",
         "hotels": [

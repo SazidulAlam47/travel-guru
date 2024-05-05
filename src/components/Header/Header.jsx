@@ -6,7 +6,9 @@ const SingleNav = ({ pageTitle, path, setIsMobileMenuOpen }) => {
     return (
         <NavLink
             className={({ isActive }) =>
-                isActive ? "text-[#F9A51A] " : "text-white dark:text-gray-200"
+                isActive
+                    ? "text-[#F9A51A] "
+                    : "text-black lg:text-white dark:text-gray-200"
             }
             to={path}
             onClick={() => setIsMobileMenuOpen(false)}
@@ -70,7 +72,12 @@ const Header = () => {
                         <img
                             src="logo-white.svg"
                             alt="logo"
-                            className="h-full"
+                            className="h-full hidden lg:block"
+                        />
+                        <img
+                            src="logo.svg"
+                            alt="logo"
+                            className="h-full block lg:hidden"
                         />
                     </Link>
                 </div>
