@@ -1,0 +1,186 @@
+[
+    {
+        "_id": 1,
+        "name": "Cox's Bazar",
+        "description": "Cox’s Bazar is a town on the southeast coast of Bangladesh. It’s known for its very long, sandy beachfront, stretching from Sea Beach in the north to Kolatoli Beach in the south. Aggameda Khyang monastery is home to bronze statues and centuries-old Buddhist manuscripts. South of town, the tropical rainforest of Himchari National Park has waterfalls and many birds. North, sea turtles breed on nearby Sonadia Island.",
+        "thumbnail_img": "/images/thumbnail/cox-bazar.jpg",
+        "portrait_img": "/images/portrait/cox-bazar.png",
+        "map": "cox_bazar_map.jpg",
+        "hotels": [
+            {
+                "name": "Seagull Hotel",
+                "img": "seagull_hotel_img.jpg",
+                "rating": 4.5,
+                "rent": "$100 per night",
+                "description": "Seagull Hotel offers luxurious accommodation with stunning views of the Bay of Bengal. The rooms are elegantly designed and equipped with modern amenities.",
+                "guests": 2,
+                "bedrooms": 1,
+                "beds": 1,
+                "baths": 1,
+                "cancellationFlexibility": "available"
+            },
+            {
+                "name": "Hotel The Cox Today",
+                "img": "hotel_cox_today_img.jpg",
+                "rating": 4.2,
+                "rent": "$80 per night",
+                "description": "Hotel The Cox Today provides comfortable rooms with sea-facing balconies. Guests can enjoy delicious local and international cuisine at the on-site restaurant.",
+                "guests": 2,
+                "bedrooms": 1,
+                "beds": 1,
+                "baths": 1,
+                "cancellationFlexibility": "available"
+            },
+            {
+                "name": "Beach View Hotel",
+                "img": "beach_view_hotel_img.jpg",
+                "rating": 4.0,
+                "rent": "$90 per night",
+                "description": "Beach View Hotel offers budget-friendly accommodations near Cox's Bazar beach. Guests can relax in comfortable rooms and enjoy beach activities.",
+                "guests": 2,
+                "bedrooms": 1,
+                "beds": 1,
+                "baths": 1,
+                "cancellationFlexibility": "available"
+            }
+        ]
+    },
+    {
+        "_id": 2,
+        "name": "Sajek",
+        "description": "Sajek Valley is an emerging tourist spot in Bangladesh situated among the hills of Kasalong range of mountains in Sajek Union, Baghaichhari Upazila in Rangamati District. The valley is 1,800 feet above sea level.",
+        "thumbnail_img": "/images/thumbnail/sajek.jpg",
+        "portrait_img": "/images/portrait/sajek.jpg",
+        "map": "sajek_map.jpg",
+        "hotels": [
+            {
+                "name": "Sajek Resort",
+                "img": "sajek_resort_img.jpg",
+                "rating": 4.3,
+                "rent": "$120 per night",
+                "description": "Sajek Resort offers cozy cottages amidst the serene beauty of Sajek Valley. Guests can indulge in various outdoor activities and enjoy local delicacies.",
+                "guests": 4,
+                "bedrooms": 2,
+                "beds": 2,
+                "baths": 1,
+                "cancellationFlexibility": "available"
+            },
+            {
+                "name": "Sajek Hill Top Resort",
+                "img": "sajek_hill_top_img.jpg",
+                "rating": 4.0,
+                "rent": "$100 per night",
+                "description": "Sajek Hill Top Resort provides comfortable accommodations with panoramic views of the surrounding hills. The resort organizes guided tours and trekking expeditions.",
+                "guests": 3,
+                "bedrooms": 1,
+                "beds": 2,
+                "baths": 1,
+                "cancellationFlexibility": "not available"
+            },
+            {
+                "name": "Green Valley Resort",
+                "img": "green_valley_resort_img.jpg",
+                "rating": 3.8,
+                "rent": "$80 per night",
+                "description": "Green Valley Resort offers budget-friendly accommodations with picturesque views of Sajek Valley. Guests can explore nearby attractions and enjoy delicious meals.",
+                "guests": 2,
+                "bedrooms": 1,
+                "beds": 1,
+                "baths": 1,
+                "cancellationFlexibility": "available"
+            }
+        ]
+    },
+    {
+        "_id": 3,
+        "name": "Sreemangal",
+        "description": "Sreemangal is a town located in Moulvibazar District in Bangladesh, known as the 'Tea Capital of Bangladesh'. It is famous for its tea gardens, forests, and wildlife. The area has many tea estates including the largest one in South Asia.",
+        "thumbnail_img": "/images/thumbnail/sreemangal.jpg",
+        "portrait_img": "/images/portrait/sreemangal.jpg",
+        "map": "sreemangal_map.jpg",
+        "hotels": [
+            {
+                "name": "Grand Sultan Tea Resort & Golf",
+                "img": "grand_sultan_img.jpg",
+                "rating": 4.7,
+                "rent": "$150 per night",
+                "description": "Grand Sultan Tea Resort & Golf offers luxurious accommodations amidst lush tea gardens. Guests can enjoy golfing, spa treatments, and nature walks.",
+                "guests": 2,
+                "bedrooms": 1,
+                "beds": 1,
+                "baths": 1,
+                "cancellationFlexibility": "available"
+            },
+            {
+                "name": "Tea Resort & Museum",
+                "img": "tea_resort_img.jpg",
+                "rating": 4.4,
+                "rent": "$100 per night",
+                "description": "Tea Resort & Museum provides comfortable rooms with a blend of modern amenities and traditional decor. Guests can explore the tea museum and enjoy cultural shows.",
+                "guests": 2,
+                "bedrooms": 1,
+                "beds": 1,
+                "baths": 1,
+                "cancellationFlexibility": "available"
+            },
+            {
+                "name": "Green Leaf Resort",
+                "img": "green_leaf_resort_img.jpg",
+                "rating": 4.2,
+                "rent": "$90 per night",
+                "description": "Green Leaf Resort offers serene accommodations surrounded by lush greenery. Guests can rejuvenate with spa treatments and explore the scenic beauty of Sreemangal.",
+                "guests": 2,
+                "bedrooms": 1,
+                "beds": 1,
+                "baths": 1,
+                "cancellationFlexibility": "available"
+            }
+        ]
+    },
+    {
+        "_id": 4,
+        "name": "Sundarbans",
+        "description": "The Sundarbans is a mangrove area in the delta formed by the confluence of the Ganges, Brahmaputra, and Meghna Rivers in the Bay of Bengal. It spans from the Hooghly River in India's state of West Bengal to the Baleswar River in Bangladesh. The Sundarbans are intersected by a complex network of tidal waterways, mudflats, and small islands of salt-tolerant mangrove forests.",
+        "thumbnail_img": "/images/thumbnail/sundarban.jpg",
+        "portrait_img": "/images/portrait/sundarban.jpg",
+        "map": "sundarbans_map.jpg",
+        "hotels": [
+            {
+                "name": "Sundarban Tiger View Point Resort",
+                "img": "tiger_view_point_img.jpg",
+                "rating": 4.6,
+                "rent": "$90 per night",
+                "description": "Sundarban Tiger View Point Resort offers comfortable accommodations in the heart of Sundarbans. Guests can embark on thrilling jungle safaris and boat trips.",
+                "guests": 2,
+                "bedrooms": 1,
+                "beds": 1,
+                "baths": 1,
+                "cancellationFlexibility": "available"
+            },
+            {
+                "name": "Sundarban Royal Eco Resort",
+                "img": "royal_eco_resort_img.jpg",
+                "rating": 4.3,
+                "rent": "$80 per night",
+                "description": "Sundarban Royal Eco Resort provides eco-friendly accommodations surrounded by lush greenery. Guests can experience the tranquility of the Sundarbans.",
+                "guests": 2,
+                "bedrooms": 1,
+                "beds": 1,
+                "baths": 1,
+                "cancellationFlexibility": "available"
+            },
+            {
+                "name": "Sundarban Paradise Resort",
+                "img": "paradise_resort_img.jpg",
+                "rating": 4.1,
+                "rent": "$70 per night",
+                "description": "Sundarban Paradise Resort offers budget-friendly accommodations with easy access to Sundarbans attractions. Guests can enjoy nature walks and birdwatching.",
+                "guests": 2,
+                "bedrooms": 1,
+                "beds": 1,
+                "baths": 1,
+                "cancellationFlexibility": "available"
+            }
+        ]
+    }
+]
