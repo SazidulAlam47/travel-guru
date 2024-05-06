@@ -1,8 +1,8 @@
-# React + Vite
+# Hey there, welcome to Travel Guru! 🌍✈️
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+We're all about making your travel planning fun and easy. Check out our slick slides and handy date-picker, all built with React coolness.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+-   **Carousel**: We've implemented a sleek carousel using **React Slick** to showcase stunning travel destinations.
+-   **Date Selection**: Plan your trips with our intuitive date picker, powered by **React Day Picker**.
