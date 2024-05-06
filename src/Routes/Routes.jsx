@@ -4,6 +4,8 @@ import Home from "../pages/Home/Home";
 import Booking from "../pages/Booking/Booking";
 import Hotels from "../pages/Hotels/Hotels";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
+import About from "../pages/About/About";
+import Contact from "../pages/Contact/Contact";
 
 const router = createBrowserRouter([
     {
@@ -25,6 +27,14 @@ const router = createBrowserRouter([
                 path: "/hotels/:tag",
                 element: <Hotels />,
                 loader: () => fetch("/data/travel.json"),
+            },
+            {
+                path: "/about",
+                element: <About />,
+            },
+            {
+                path: "/contact",
+                element: <Contact />,
             },
         ],
     },
