@@ -3,15 +3,15 @@ import { FaStar } from "react-icons/fa6";
 
 const SingleHotel = ({ hotel, days }) => {
     return (
-        <div className="flex flex-col md:flex-row gap-3">
-            <div className="w-[45%]">
+        <div className="flex flex-col sm:flex-row gap-3">
+            <div className="sm:w-[45%]">
                 <img
                     src={hotel.img}
                     alt={hotel.name}
-                    className="rounded-lg h-full"
+                    className="rounded-lg h-full w-full"
                 />
             </div>
-            <div className="w-[55%]">
+            <div className="sm:w-[55%]">
                 <h4 className="font-semibold text-xl">{hotel.name}</h4>
                 <div className="text-[#6A6A6A] space-y-1">
                     <p className="space-x-3">

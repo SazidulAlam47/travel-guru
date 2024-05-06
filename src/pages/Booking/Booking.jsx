@@ -92,7 +92,7 @@ const Booking = () => {
                     <div className="lg:w-[55%]">
                         <form
                             onSubmit={handleBooking}
-                            className="card-body bg-white w-9/12 mx-auto rounded-lg"
+                            className="lg:card-body py-4 lg:py-0 bg-white lg:w-9/12 mx-auto rounded-lg"
                         >
                             <div className="form-control">
                                 <label className="label">
