@@ -1,9 +1,23 @@
 import { useLoaderData, useParams } from "react-router-dom";
+import "react-day-picker/dist/style.css";
+import { format } from "date-fns";
+import { useState } from "react";
+import { DayPicker } from "react-day-picker";
 
 const Booking = () => {
     const allPlaces = useLoaderData();
     const { id } = useParams();
     const place = allPlaces.find((place) => place._id === id);
+
+    const tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    const [selectedFrom, setSelectedFrom] = useState(tomorrow);
+    const [showFrom, setShowFrom] = useState(false);
+
+    const nextDay = new Date();
+    nextDay.setDate(nextDay.getDate() + 3);
+    const [selectedTo, setSelectedTo] = useState(nextDay);
+    const [showTo, setShowTo] = useState(false);
 
     return (
         <div className="lg:h-[88vh] overflow-hidden">
@@ -44,29 +58,56 @@ const Booking = () => {
                             </div>
 
                             <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">
-                                <div className="form-control">
+                                <div className="form-control relative">
                                     <label className="label">
                                         <span className="label-text text-[#818181] font-medium">
                                             From
                                         </span>
                                     </label>
+                                    {showFrom && (
+                                        <DayPicker
+                                            className="bg-white text-black inline-block p-5 rounded-lg absolute bottom-12 left-7 shadow-2xl"
+                                            mode="single"
+                                            selected={selectedFrom}
+                                            onSelect={(date) => {
+                                                setSelectedFrom(date);
+                                                setShowFrom(false);
+                                            }}
+                                        />
+                                    )}
                                     <input
-                                        type="date"
-                                        placeholder="Destination"
+                                        type="text"
+                                        placeholder="Select a date"
                                         className="input input-lg bg-[#F2F2F2] rounded-lg text-black font-bold px-5 placeholder:font-medium"
-                                        required
+                                        value={format(selectedFrom, "PP")}
+                                        onChange={() => {}}
+                                        onClick={() => setShowFrom(!showFrom)}
                                     />
                                 </div>
-                                <div className="form-control">
+                                <div className="form-control relative">
                                     <label className="label">
                                         <span className="label-text text-[#818181] font-medium">
                                             To
                                         </span>
                                     </label>
+                                    {showTo && (
+                                        <DayPicker
+                                            className="bg-white text-black inline-block p-5 rounded-lg absolute bottom-12 left-2 shadow-2xl"
+                                            mode="single"
+                                            selected={selectedTo}
+                                            onSelect={(date) => {
+                                                setSelectedTo(date);
+                                                setShowTo(false);
+                                            }}
+                                        />
+                                    )}
                                     <input
-                                        type="date"
-                                        placeholder="Destination"
+                                        type="text"
+                                        placeholder="Select a date"
                                         className="input input-lg bg-[#F2F2F2] rounded-lg text-black font-bold px-5 placeholder:font-medium"
+                                        value={format(selectedTo, "PP")}
+                                        onChange={() => {}}
+                                        onClick={() => setShowTo(!showTo)}
                                         required
                                     />
                                 </div>

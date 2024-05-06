@@ -70,12 +70,12 @@ const Header = () => {
                 <div className="navbar-start">
                     <Link to="/" className="btn btn-ghost hover:bg-transparent">
                         <img
-                            src="logo-white.svg"
+                            src="/logo-white.svg"
                             alt="logo"
                             className="h-full hidden lg:block"
                         />
                         <img
-                            src="logo.svg"
+                            src="/logo.svg"
                             alt="logo"
                             className="h-full block lg:hidden"
                         />
