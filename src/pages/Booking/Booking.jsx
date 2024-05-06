@@ -1,23 +1,44 @@
-import { useLoaderData, useParams } from "react-router-dom";
+import { useLoaderData, useNavigate, useParams } from "react-router-dom";
 import "react-day-picker/dist/style.css";
-import { format } from "date-fns";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { DayPicker } from "react-day-picker";
+import formatDate from "../../utils/formatDate";
+import capitalize from "../../utils/capitalize";
 
 const Booking = () => {
+    const [origin, setOrigin] = useState("");
+    const [error, setError] = useState("");
     const allPlaces = useLoaderData();
-    const { id } = useParams();
-    const place = allPlaces.find((place) => place._id === id);
+    const { tag } = useParams();
+    const navigate = useNavigate();
+    const place = allPlaces.find((place) => place.tag === tag);
 
-    const tomorrow = new Date();
-    tomorrow.setDate(tomorrow.getDate() + 1);
-    const [selectedFrom, setSelectedFrom] = useState(tomorrow);
+    const today = new Date();
+    const [selectedFrom, setSelectedFrom] = useState(today);
     const [showFrom, setShowFrom] = useState(false);
 
-    const nextDay = new Date();
-    nextDay.setDate(nextDay.getDate() + 3);
-    const [selectedTo, setSelectedTo] = useState(nextDay);
+    const [selectedTo, setSelectedTo] = useState(null);
     const [showTo, setShowTo] = useState(false);
+
+    useEffect(() => {
+        setOrigin(capitalize(origin));
+    }, [origin]);
+
+    const handleBooking = (e) => {
+        e.preventDefault();
+        const destination = place.name;
+        const data = { origin, destination, selectedFrom, selectedTo };
+        console.log(data);
+        if (!origin) {
+            setError("Please select a departure point");
+            return;
+        } else if (!selectedTo) {
+            setError("Please select your return date");
+            return;
+        }
+        setError("");
+        navigate(`/hotels/${tag}`);
+    };
 
     return (
         <div className="lg:h-[88vh] overflow-hidden">
@@ -28,7 +49,10 @@ const Booking = () => {
             <div className="container mx-auto px-3 md:px-6 text-black lg:text-white pt-2 pb-8 lg:pt-0 lg:pb-0">
                 <div className="flex flex-col lg:flex-row-reverse lg:pt-[12vh]">
                     <div className="lg:w-[55%]">
-                        <form className="card-body bg-white w-9/12 mx-auto rounded-lg">
+                        <form
+                            onSubmit={handleBooking}
+                            className="card-body bg-white w-9/12 mx-auto rounded-lg"
+                        >
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text text-[#818181] font-medium">
@@ -37,9 +61,10 @@ const Booking = () => {
                                 </label>
                                 <input
                                     type="text"
-                                    placeholder="Origin"
+                                    placeholder="Departure Point"
                                     className="input input-lg bg-[#F2F2F2] rounded-lg text-black font-bold px-5 placeholder:font-medium"
-                                    required
+                                    value={origin}
+                                    onChange={(e) => setOrigin(e.target.value)}
                                 />
                             </div>
                             <div className="form-control">
@@ -79,7 +104,7 @@ const Booking = () => {
                                         type="text"
                                         placeholder="Select a date"
                                         className="input input-lg bg-[#F2F2F2] rounded-lg text-black font-bold px-5 placeholder:font-medium"
-                                        value={format(selectedFrom, "PP")}
+                                        value={formatDate(selectedFrom)}
                                         onChange={() => {}}
                                         onClick={() => setShowFrom(!showFrom)}
                                     />
@@ -104,8 +129,16 @@ const Booking = () => {
                                     <input
                                         type="text"
                                         placeholder="Select a date"
-                                        className="input input-lg bg-[#F2F2F2] rounded-lg text-black font-bold px-5 placeholder:font-medium"
-                                        value={format(selectedTo, "PP")}
+                                        className={`input input-lg bg-[#F2F2F2] rounded-lg px-5 placeholder:font-medium ${
+                                            selectedTo
+                                                ? "text-black font-bold"
+                                                : "text-[#818181] font-medium"
+                                        }`}
+                                        value={
+                                            selectedTo
+                                                ? formatDate(selectedTo)
+                                                : "Select a date"
+                                        }
                                         onChange={() => {}}
                                         onClick={() => setShowTo(!showTo)}
                                         required
@@ -116,6 +149,9 @@ const Booking = () => {
                                 <button className="btn btn-lg bg-primary hover:bg-[#ffb53d]">
                                     Start Booking
                                 </button>
+                                {error && (
+                                    <p className="text-red-600 pt-2">{error}</p>
+                                )}
                             </div>
                         </form>
                     </div>

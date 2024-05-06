@@ -120,7 +120,7 @@ const Home = () => {
                         </h2>
                         <p>{places[activeSlide].description}</p>
                         <Link
-                            to={`/booking/${places[activeSlide]._id}`}
+                            to={`/booking/${places[activeSlide].tag}`}
                             className="btn bg-primary px-7 border-0 hover:bg-[#ffb53d]"
                         >
                             Booking <IoIosArrowRoundForward size={25} />
