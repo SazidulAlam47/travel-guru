@@ -1,9 +1,9 @@
 import { useLoaderData, useNavigate, useParams } from "react-router-dom";
-import "react-day-picker/dist/style.css";
 import { useEffect, useRef, useState } from "react";
 import { DayPicker } from "react-day-picker";
 import formatDate from "../../utils/formatDate";
 import capitalize from "../../utils/capitalize";
+import "react-day-picker/dist/style.css";
 
 const Booking = () => {
     const [origin, setOrigin] = useState("");
