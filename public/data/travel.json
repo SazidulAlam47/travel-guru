@@ -6,11 +6,11 @@
         "description": "Cox’s Bazar is a town on the southeast coast of Bangladesh. It’s known for its very long, sandy beachfront, stretching from Sea Beach in the north to Kolatoli Beach in the south. Aggameda Khyang monastery is home to bronze statues and centuries-old Buddhist manuscripts. South of town, the tropical rainforest of Himchari National Park has waterfalls and many birds. North, sea turtles breed on nearby Sonadia Island.",
         "thumbnail_img": "/images/thumbnail/cox-bazar.png",
         "portrait_img": "/images/portrait/cox-bazar.png",
-        "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d43877.918398744456!2d91.96421527095063!3d21.4343619604304!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30adc868716d4925%3A0xcd3ada60adda3a3b!2sCox&#39;s%20Bazar%20Beach!5e0!3m2!1sen!2sbd!4v1715000777335!5m2!1sen!2sbd",
+        "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d461683.05129635293!2d91.80215937003187!3d21.484639827161864!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30adc3a48c2d5df1%3A0x38abf79fa6ed1dd7!2sCox&#39;s%20Bazar%20District!5e0!3m2!1sen!2sbd!4v1715001459329!5m2!1sen!2sbd",
         "hotels": [
             {
                 "name": "Seagull Hotel",
-                "img": "seagull_hotel_img.jpg",
+                "img": "/images/hotels/cox-bazar/Panorama-Ocean-Sutie-hm01.jpg",
                 "rating": 4.5,
                 "rent": 100,
                 "description": "Seagull Hotel offers luxurious accommodation with stunning views of the Bay of Bengal. The rooms are elegantly designed and equipped with modern amenities.",
@@ -22,7 +22,7 @@
             },
             {
                 "name": "Hotel The Cox Today",
-                "img": "hotel_cox_today_img.jpg",
+                "img": "/images/hotels/cox-bazar/5203-ess.jpg",
                 "rating": 4.2,
                 "rent": 80,
                 "description": "Hotel The Cox Today provides comfortable rooms with sea-facing balconies. Guests can enjoy delicious local and international cuisine at the on-site restaurant.",
@@ -34,7 +34,7 @@
             },
             {
                 "name": "Beach View Hotel",
-                "img": "beach_view_hotel_img.jpg",
+                "img": "/images/hotels/cox-bazar/couple-delux.jpg",
                 "rating": 4.0,
                 "rent": 90,
                 "description": "Beach View Hotel offers budget-friendly accommodations near Cox's Bazar beach. Guests can relax in comfortable rooms and enjoy beach activities.",
@@ -57,7 +57,7 @@
         "hotels": [
             {
                 "name": "Sajek Resort",
-                "img": "sajek_resort_img.jpg",
+                "img": "/images/hotels/sajek/best-resort-of-sajek.jpg",
                 "rating": 4.3,
                 "rent": 120,
                 "description": "Sajek Resort offers cozy cottages amidst the serene beauty of Sajek Valley. Guests can indulge in various outdoor activities and enjoy local delicacies.",
@@ -69,7 +69,7 @@
             },
             {
                 "name": "Sajek Hill Top Resort",
-                "img": "sajek_hill_top_img.jpg",
+                "img": "/images/hotels/sajek/room-3.jpg",
                 "rating": 4.0,
                 "rent": 100,
                 "description": "Sajek Hill Top Resort provides comfortable accommodations with panoramic views of the surrounding hills. The resort organizes guided tours and trekking expeditions.",
@@ -81,7 +81,7 @@
             },
             {
                 "name": "Green Valley Resort",
-                "img": "green_valley_resort_img.jpg",
+                "img": "/images/hotels/sajek/FB_IMG_1664818584821.jpg",
                 "rating": 3.8,
                 "rent": 80,
                 "description": "Green Valley Resort offers budget-friendly accommodations with picturesque views of Sajek Valley. Guests can explore nearby attractions and enjoy delicious meals.",
@@ -104,7 +104,7 @@
         "hotels": [
             {
                 "name": "Grand Sultan Tea Resort & Golf",
-                "img": "grand_sultan_img.jpg",
+                "img": "/images/hotels/sreemangal/32e4e420.jpg",
                 "rating": 4.7,
                 "rent": 150,
                 "description": "Grand Sultan Tea Resort & Golf offers luxurious accommodations amidst lush tea gardens. Guests can enjoy golfing, spa treatments, and nature walks.",
@@ -116,7 +116,7 @@
             },
             {
                 "name": "Tea Resort & Museum",
-                "img": "tea_resort_img.jpg",
+                "img": "/images/hotels/sreemangal/2d87b18b.jpg",
                 "rating": 4.4,
                 "rent": 100,
                 "description": "Tea Resort & Museum provides comfortable rooms with a blend of modern amenities and traditional decor. Guests can explore the tea museum and enjoy cultural shows.",
@@ -128,7 +128,7 @@
             },
             {
                 "name": "Green Leaf Resort",
-                "img": "green_leaf_resort_img.jpg",
+                "img": "/images/hotels/sreemangal/12679685797419823-best_hotels_in_cox's_bazar.jpg",
                 "rating": 4.2,
                 "rent": 90,
                 "description": "Green Leaf Resort offers serene accommodations surrounded by lush greenery. Guests can rejuvenate with spa treatments and explore the scenic beauty of Sreemangal.",
@@ -151,7 +151,7 @@
         "hotels": [
             {
                 "name": "Sundarban Tiger View Point Resort",
-                "img": "tiger_view_point_img.jpg",
+                "img": "/images/hotels/sundarbans/sunderban-tiger-campbfd.jpg",
                 "rating": 4.6,
                 "rent": 90,
                 "description": "Sundarban Tiger View Point Resort offers comfortable accommodations in the heart of Sundarbans. Guests can embark on thrilling jungle safaris and boat trips.",
@@ -163,7 +163,7 @@
             },
             {
                 "name": "Sundarban Royal Eco Resort",
-                "img": "royal_eco_resort_img.jpg",
+                "img": "/images/hotels/sundarbans/getlstd-property-photo.jpg",
                 "rating": 4.3,
                 "rent": 80,
                 "description": "Sundarban Royal Eco Resort provides eco-friendly accommodations surrounded by lush greenery. Guests can experience the tranquility of the Sundarbans.",
@@ -175,7 +175,7 @@
             },
             {
                 "name": "Sundarban Paradise Resort",
-                "img": "paradise_resort_img.jpg",
+                "img": "/images/hotels/sundarbans/royal-sundarban-wild.jpg",
                 "rating": 4.1,
                 "rent": 70,
                 "description": "Sundarban Paradise Resort offers budget-friendly accommodations with easy access to Sundarbans attractions. Guests can enjoy nature walks and birdwatching.",
