@@ -1,10 +1,17 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import SingleHotel from "./SingleHotel";
+import formatDate from "../../utils/formatDate";
 
 const Hotels = () => {
     const allPlaces = useLoaderData();
     const { tag } = useParams();
     const place = allPlaces.find((place) => place.tag === tag);
+    const bookingString = localStorage.getItem("booking");
+    const booking = JSON.parse(bookingString);
+
+    const formDate = new Date(booking.selectedFrom);
+    const toDate = new Date(booking.selectedTo);
+    const days = toDate.getDate() - formDate.getDate() + 1;
 
     return (
         <div className="container mx-auto px-3 md:px-6 pb-6">
@@ -12,11 +19,18 @@ const Hotels = () => {
                 <h3 className="font-bold text-2xl pt-3">
                     Stay in {place.name}
                 </h3>
+                <h3 className="font-medium">
+                    {formatDate(formDate)} - {formatDate(toDate)}
+                </h3>
                 <div className="flex flex-col md:flex-row gap-4 pt-1">
                     <div className="w-[55%]">
                         <div className="space-y-4 pt-2">
                             {place.hotels.map((hotel, idx) => (
-                                <SingleHotel key={idx} hotel={hotel} />
+                                <SingleHotel
+                                    key={idx}
+                                    hotel={hotel}
+                                    days={days}
+                                />
                             ))}
                         </div>
                     </div>

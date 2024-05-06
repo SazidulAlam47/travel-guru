@@ -1,6 +1,6 @@
 import { useLoaderData, useNavigate, useParams } from "react-router-dom";
 import "react-day-picker/dist/style.css";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { DayPicker } from "react-day-picker";
 import formatDate from "../../utils/formatDate";
 import capitalize from "../../utils/capitalize";
@@ -20,6 +20,43 @@ const Booking = () => {
     const [selectedTo, setSelectedTo] = useState(null);
     const [showTo, setShowTo] = useState(false);
 
+    const showFromRef = useRef();
+    const showToRef = useRef();
+
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (
+                showFromRef.current &&
+                !showFromRef.current.contains(event.target)
+            ) {
+                setShowFrom(false);
+            }
+        };
+        if (showFrom) {
+            document.addEventListener("click", handleClickOutside);
+        }
+        return () => {
+            document.removeEventListener("click", handleClickOutside);
+        };
+    }, [showFrom]);
+
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (
+                showToRef.current &&
+                !showToRef.current.contains(event.target)
+            ) {
+                setShowTo(false);
+            }
+        };
+        if (showTo) {
+            document.addEventListener("click", handleClickOutside);
+        }
+        return () => {
+            document.removeEventListener("click", handleClickOutside);
+        };
+    }, [showTo]);
+
     useEffect(() => {
         setOrigin(capitalize(origin));
     }, [origin]);
@@ -32,11 +69,15 @@ const Booking = () => {
         if (!origin) {
             setError("Please select a departure point");
             return;
+        } else if (!selectedFrom) {
+            setError("Please select your starting date");
+            return;
         } else if (!selectedTo) {
             setError("Please select your return date");
             return;
         }
         setError("");
+        localStorage.setItem("booking", JSON.stringify(data));
         navigate(`/hotels/${tag}`);
     };
 
@@ -83,7 +124,10 @@ const Booking = () => {
                             </div>
 
                             <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">
-                                <div className="form-control relative">
+                                <div
+                                    className="form-control relative"
+                                    ref={showFromRef}
+                                >
                                     <label className="label">
                                         <span className="label-text text-[#818181] font-medium">
                                             From
@@ -91,7 +135,7 @@ const Booking = () => {
                                     </label>
                                     {showFrom && (
                                         <DayPicker
-                                            className="bg-white text-black inline-block p-5 rounded-lg absolute bottom-12 left-7 shadow-2xl"
+                                            className="bg-white text-black inline-block p-5 rounded-lg absolute bottom-12 left-7 shadow-2xl z-20"
                                             mode="single"
                                             selected={selectedFrom}
                                             onSelect={(date) => {
@@ -103,13 +147,27 @@ const Booking = () => {
                                     <input
                                         type="text"
                                         placeholder="Select a date"
-                                        className="input input-lg bg-[#F2F2F2] rounded-lg text-black font-bold px-5 placeholder:font-medium"
-                                        value={formatDate(selectedFrom)}
+                                        className={`input input-lg bg-[#F2F2F2] rounded-lg px-5 placeholder:font-medium ${
+                                            selectedFrom
+                                                ? "text-black font-bold"
+                                                : "text-[#818181] font-medium"
+                                        }`}
+                                        value={
+                                            selectedFrom
+                                                ? formatDate(selectedFrom)
+                                                : "Select a date"
+                                        }
                                         onChange={() => {}}
-                                        onClick={() => setShowFrom(!showFrom)}
+                                        onClick={() => {
+                                            setShowFrom(!showFrom);
+                                            setShowTo(false);
+                                        }}
                                     />
                                 </div>
-                                <div className="form-control relative">
+                                <div
+                                    className="form-control relative"
+                                    ref={showToRef}
+                                >
                                     <label className="label">
                                         <span className="label-text text-[#818181] font-medium">
                                             To
@@ -117,7 +175,7 @@ const Booking = () => {
                                     </label>
                                     {showTo && (
                                         <DayPicker
-                                            className="bg-white text-black inline-block p-5 rounded-lg absolute bottom-12 left-2 shadow-2xl"
+                                            className="bg-white text-black inline-block p-5 rounded-lg absolute bottom-12 left-2 shadow-2xl z-20s"
                                             mode="single"
                                             selected={selectedTo}
                                             onSelect={(date) => {
@@ -140,7 +198,10 @@ const Booking = () => {
                                                 : "Select a date"
                                         }
                                         onChange={() => {}}
-                                        onClick={() => setShowTo(!showTo)}
+                                        onClick={() => {
+                                            setShowTo(!showTo);
+                                            setShowFrom(false);
+                                        }}
                                         required
                                     />
                                 </div>

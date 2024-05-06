@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { FaStar } from "react-icons/fa6";
 
-const SingleHotel = ({ hotel }) => {
+const SingleHotel = ({ hotel, days }) => {
     return (
         <div className="flex flex-col md:flex-row gap-3">
             <div className="w-[45%]">
@@ -36,7 +36,7 @@ const SingleHotel = ({ hotel }) => {
                         <span className="font-semibold">${hotel.rent}</span>
                         /night{" "}
                         <span className="text-[#898989] text-sm pl-1">
-                            $00 total
+                            ${hotel.rent * days} total
                         </span>
                     </div>
                 </div>
@@ -47,6 +47,7 @@ const SingleHotel = ({ hotel }) => {
 
 SingleHotel.propTypes = {
     hotel: PropTypes.object.isRequired,
+    days: PropTypes.number.isRequired,
 };
 
 export default SingleHotel;

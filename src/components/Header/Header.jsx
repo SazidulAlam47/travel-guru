@@ -37,13 +37,8 @@ const Header = () => {
             />
             <SingleNav
                 setIsMobileMenuOpen={setIsMobileMenuOpen}
-                pageTitle="News"
-                path="/news"
-            />
-            <SingleNav
-                setIsMobileMenuOpen={setIsMobileMenuOpen}
-                pageTitle="Blog"
-                path="/blog"
+                pageTitle="About"
+                path="/about"
             />
             <SingleNav
                 setIsMobileMenuOpen={setIsMobileMenuOpen}
@@ -103,12 +98,12 @@ const Header = () => {
                     <div className="hidden lg:block pr-7">
                         <nav className="flex gap-5">{navLinks}</nav>
                     </div>
-                    <Link
-                        to="/login"
+                    <a
+                        href="tel:+8801555021112"
                         className="btn bg-primary px-7 border-0 hover:bg-[#ffb53d]"
                     >
-                        Login
-                    </Link>
+                        Call Now
+                    </a>
                     <div className="dropdown pl-2" ref={dropdownRef}>
                         <div
                             tabIndex={0}
