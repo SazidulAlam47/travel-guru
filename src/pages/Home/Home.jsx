@@ -45,7 +45,7 @@ const Home = () => {
         nextArrow: <SampleNextArrow />,
         prevArrow: <SamplePrevArrow />,
 
-        afterChange: (current) => setActiveSlide(current),
+        beforeChange: (_, next) => setActiveSlide(next),
         responsive: [
             {
                 breakpoint: 1024,
