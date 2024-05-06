@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import PropTypes from "prop-types";
 import { useEffect, useRef, useState } from "react";
 
@@ -8,7 +8,12 @@ const SingleNav = ({ pageTitle, path, setIsMobileMenuOpen }) => {
             className={({ isActive }) =>
                 isActive
                     ? "text-[#F9A51A] "
-                    : "text-black lg:text-white dark:text-gray-200"
+                    : `${
+                          location.pathname === "/" ||
+                          location.pathname.includes("booking")
+                              ? "text-black lg:text-white"
+                              : "text-black"
+                      }  dark:text-gray-200`
             }
             to={path}
             onClick={() => setIsMobileMenuOpen(false)}
@@ -21,6 +26,7 @@ const SingleNav = ({ pageTitle, path, setIsMobileMenuOpen }) => {
 const Header = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const dropdownRef = useRef();
+    const location = useLocation();
 
     const navLinks = (
         <>
@@ -69,16 +75,27 @@ const Header = () => {
             <div className="navbar container mx-auto px-3 md:px-6">
                 <div className="navbar-start">
                     <Link to="/" className="btn btn-ghost hover:bg-transparent">
-                        <img
-                            src="/logo-white.svg"
-                            alt="logo"
-                            className="h-full hidden lg:block"
-                        />
-                        <img
-                            src="/logo.svg"
-                            alt="logo"
-                            className="h-full block lg:hidden"
-                        />
+                        {location.pathname === "/" ||
+                        location.pathname.includes("booking") ? (
+                            <>
+                                <img
+                                    src="/logo-white.svg"
+                                    alt="logo"
+                                    className="h-full hidden lg:block"
+                                />
+                                <img
+                                    src="/logo.svg"
+                                    alt="logo"
+                                    className="h-full block lg:hidden"
+                                />
+                            </>
+                        ) : (
+                            <img
+                                src="/logo.svg"
+                                alt="logo"
+                                className="h-full"
+                            />
+                        )}
                     </Link>
                 </div>
                 <div className="navbar-center hidden lg:flex"></div>
