@@ -41,7 +41,7 @@ const Home = () => {
         slidesToShow: 3,
         slidesToScroll: 1,
         initialSlide: 0,
-        // autoplay: true,
+        autoplay: true,
         autoplaySpeed: 4000,
         nextArrow: <SampleNextArrow />,
         prevArrow: <SamplePrevArrow />,
