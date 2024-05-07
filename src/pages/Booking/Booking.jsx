@@ -6,6 +6,7 @@ import capitalize from "../../utils/capitalize";
 import "react-day-picker/dist/style.css";
 import { Helmet } from "react-helmet-async";
 import { useWindowSize } from "@uidotdev/usehooks";
+import isSameDate from "../../utils/isSameDate";
 
 const Booking = () => {
     const [origin, setOrigin] = useState("");
@@ -15,8 +16,6 @@ const Booking = () => {
     const navigate = useNavigate();
     const place = allPlaces.find((place) => place.tag === tag);
     const size = useWindowSize();
-
-    // size.height <= 685
 
     const today = new Date();
     const [selectedFrom, setSelectedFrom] = useState(today);
@@ -81,6 +80,13 @@ const Booking = () => {
             setError("Please select your return date");
             return;
         }
+        if (
+            !isSameDate(selectedTo, selectedFrom) &&
+            selectedFrom > selectedTo
+        ) {
+            setError("Please select a valid return date");
+            return;
+        }
         setError("");
         localStorage.setItem("booking", JSON.stringify(data));
         navigate(`/hotels/${tag}`);
@@ -104,9 +110,9 @@ const Booking = () => {
                     <div className="lg:w-[55%]">
                         <form
                             onSubmit={handleBooking}
-                            className={`lg:card-body py-4 bg-white lg:w-9/12 mx-auto rounded-lg max-h-[76vh] ${
-                                size.height <= 565 && "space-y-0"
-                            }`}
+                            className={
+                                "lg:card-body py-4 bg-white lg:w-9/12 mx-auto rounded-lg max-h-[76vh]"
+                            }
                         >
                             <div className="form-control">
                                 <label
@@ -146,6 +152,7 @@ const Booking = () => {
                                     } bg-[#F2F2F2] rounded-lg text-black font-bold px-5 placeholder:font-medium`}
                                     value={place.name}
                                     onChange={() => {}}
+                                    readOnly
                                 />
                             </div>
 
@@ -234,7 +241,12 @@ const Booking = () => {
                                             size.height >= 685 && "lg:input-lg"
                                         } bg-[#F2F2F2] rounded-lg px-5 placeholder:font-medium ${
                                             selectedTo
-                                                ? "text-black font-bold"
+                                                ? !isSameDate(
+                                                      selectedTo,
+                                                      selectedFrom
+                                                  ) && selectedFrom > selectedTo
+                                                    ? "text-red-600 font-bold"
+                                                    : "text-black font-bold"
                                                 : "text-[#818181] font-medium"
                                         }`}
                                         value={
