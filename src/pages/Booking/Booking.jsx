@@ -5,6 +5,7 @@ import formatDate from "../../utils/formatDate";
 import capitalize from "../../utils/capitalize";
 import "react-day-picker/dist/style.css";
 import { Helmet } from "react-helmet-async";
+import { useWindowSize } from "@uidotdev/usehooks";
 
 const Booking = () => {
     const [origin, setOrigin] = useState("");
@@ -13,6 +14,9 @@ const Booking = () => {
     const { tag } = useParams();
     const navigate = useNavigate();
     const place = allPlaces.find((place) => place.tag === tag);
+    const size = useWindowSize();
+
+    // size.height <= 685
 
     const today = new Date();
     const [selectedFrom, setSelectedFrom] = useState(today);
@@ -92,14 +96,24 @@ const Booking = () => {
                 <img src={place.thumbnail_img} alt="place" className="w-full" />
             </div>
             <div className="container mx-auto px-3 md:px-6 text-black lg:text-white pt-2 pb-8 lg:pt-0 lg:pb-0">
-                <div className="flex flex-col lg:flex-row-reverse lg:pt-[12vh]">
+                <div
+                    className={`flex flex-col lg:flex-row-reverse ${
+                        size.height >= 595 ? "lg:py-[12vh]" : "lg:py-[3vh]"
+                    }`}
+                >
                     <div className="lg:w-[55%]">
                         <form
                             onSubmit={handleBooking}
-                            className="lg:card-body py-4 bg-white lg:w-9/12 mx-auto rounded-lg"
+                            className={`lg:card-body py-4 bg-white lg:w-9/12 mx-auto rounded-lg max-h-[76vh] ${
+                                size.height <= 565 && "space-y-0"
+                            }`}
                         >
                             <div className="form-control">
-                                <label className="label">
+                                <label
+                                    className={`label ${
+                                        size.height <= 530 && "pt-0"
+                                    }`}
+                                >
                                     <span className="label-text text-[#818181] font-medium">
                                         Origin
                                     </span>
@@ -107,13 +121,19 @@ const Booking = () => {
                                 <input
                                     type="text"
                                     placeholder="Departure Point"
-                                    className="input lg:input-lg bg-[#F2F2F2] rounded-lg text-black font-bold px-5 placeholder:font-medium"
+                                    className={`input ${
+                                        size.height >= 685 && "lg:input-lg"
+                                    } bg-[#F2F2F2] rounded-lg text-black font-bold px-5 placeholder:font-medium`}
                                     value={origin}
                                     onChange={(e) => setOrigin(e.target.value)}
                                 />
                             </div>
                             <div className="form-control">
-                                <label className="label">
+                                <label
+                                    className={`label ${
+                                        size.height <= 530 && "pt-0"
+                                    }`}
+                                >
                                     <span className="label-text text-[#818181] font-medium">
                                         Destination
                                     </span>
@@ -121,7 +141,9 @@ const Booking = () => {
                                 <input
                                     type="text"
                                     placeholder="Destination"
-                                    className="input lg:input-lg bg-[#F2F2F2] rounded-lg text-black font-bold px-5 placeholder:font-medium"
+                                    className={`input ${
+                                        size.height >= 685 && "lg:input-lg"
+                                    } bg-[#F2F2F2] rounded-lg text-black font-bold px-5 placeholder:font-medium`}
                                     value={place.name}
                                     onChange={() => {}}
                                 />
@@ -132,7 +154,11 @@ const Booking = () => {
                                     className="form-control relative"
                                     ref={showFromRef}
                                 >
-                                    <label className="label">
+                                    <label
+                                        className={`label ${
+                                            size.height <= 530 && "pt-0"
+                                        }`}
+                                    >
                                         <span className="label-text text-[#818181] font-medium">
                                             From
                                         </span>
@@ -154,7 +180,9 @@ const Booking = () => {
                                     <input
                                         type="text"
                                         placeholder="Select a date"
-                                        className={`input lg:input-lg bg-[#F2F2F2] rounded-lg px-5 placeholder:font-medium ${
+                                        className={`input ${
+                                            size.height >= 685 && "lg:input-lg"
+                                        } bg-[#F2F2F2] rounded-lg px-5 placeholder:font-medium ${
                                             selectedFrom
                                                 ? "text-black font-bold"
                                                 : "text-[#818181] font-medium"
@@ -175,7 +203,11 @@ const Booking = () => {
                                     className="form-control relative"
                                     ref={showToRef}
                                 >
-                                    <label className="label">
+                                    <label
+                                        className={`label ${
+                                            size.height <= 530 && "pt-0"
+                                        }`}
+                                    >
                                         <span className="label-text text-[#818181] font-medium">
                                             To
                                         </span>
@@ -197,7 +229,9 @@ const Booking = () => {
                                     <input
                                         type="text"
                                         placeholder="Select a date"
-                                        className={`input lg:input-lg bg-[#F2F2F2] rounded-lg px-5 placeholder:font-medium ${
+                                        className={`input ${
+                                            size.height >= 685 && "lg:input-lg"
+                                        } bg-[#F2F2F2] rounded-lg px-5 placeholder:font-medium ${
                                             selectedTo
                                                 ? "text-black font-bold"
                                                 : "text-[#818181] font-medium"
@@ -217,7 +251,11 @@ const Booking = () => {
                                 </div>
                             </div>
                             <div className="form-control mt-6">
-                                <button className="btn lg:btn-lg bg-primary hover:bg-[#ffb53d]">
+                                <button
+                                    className={`btn ${
+                                        size.height >= 685 && "lg:btn-lg"
+                                    } bg-primary hover:bg-[#ffb53d]`}
+                                >
                                     Start Booking
                                 </button>
                                 {error && (
@@ -226,7 +264,11 @@ const Booking = () => {
                             </div>
                         </form>
                     </div>
-                    <div className="lg:w-[45%] space-y-6 pr-4 px-3 md:px-0">
+                    <div
+                        className={`lg:w-[45%] space-y-6 pr-4 px-3 md:px-0 ${
+                            size.height <= 595 && "pt-[12vh]"
+                        }`}
+                    >
                         <h2 className="font-bebasNeue text-7xl md:text-8xl">
                             {place.name}
                         </h2>

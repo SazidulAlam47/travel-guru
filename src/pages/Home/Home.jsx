@@ -10,7 +10,7 @@ import { Helmet } from "react-helmet-async";
 const SampleNextArrow = ({ onClick }) => {
     return (
         <button
-            className="flex justify-center items-center bg-[#f3f3f3] text-[#444] hover:bg-primary transition-all h-14 w-14 rounded-full hover:text-white z-20 absolute bottom-4 left-2/3 lg:-bottom-20 lg:left-16"
+            className="flex justify-center items-center bg-[#f3f3f3] text-[#444] hover:bg-primary transition-all h-14 w-14 rounded-full hover:text-white z-20 absolute bottom-4 left-2/3 lg:-bottom-16 lg:left-16"
             onClick={onClick}
         >
             <MdArrowForwardIos size={20} className="ml-1" />
@@ -21,7 +21,7 @@ const SampleNextArrow = ({ onClick }) => {
 const SamplePrevArrow = ({ onClick }) => {
     return (
         <button
-            className="flex justify-center items-center bg-[#f3f3f3] text-[#444] hover:bg-primary transition-all h-14 w-14 rounded-full hover:text-white z-20 absolute bottom-4 right-2/3 lg:-bottom-20 lg:-left-4"
+            className="flex justify-center items-center bg-[#f3f3f3] text-[#444] hover:bg-primary transition-all h-14 w-14 rounded-full hover:text-white z-20 absolute bottom-4 right-2/3 lg:-bottom-16 lg:-left-4"
             onClick={onClick}
         >
             <MdArrowBackIosNew size={20} className="mr-1" />
@@ -82,7 +82,7 @@ const Home = () => {
                 ))}
             </div>
             <div className="container mx-auto px-3 md:px-6 text-black lg:text-white pt-2 pb-8 lg:pt-0 lg:pb-0">
-                <div className="flex flex-col lg:flex-row-reverse lg:pt-[12vh]">
+                <div className="flex flex-col lg:flex-row-reverse lg:py-[12vh]">
                     <div className="lg:w-[55%]">
                         <div className="lg:w-[145%]">
                             <div className="slider-container">
@@ -106,7 +106,7 @@ const Home = () => {
                                                 }
                                             >
                                                 <div className="bg-gradient-to-t from-[#000000c5] to-transparent absolute right-0 left-0 top-0 bottom-0"></div>
-                                                <div className=" h-[50vh] sm:h-[40vh] lg:h-full">
+                                                <div className="h-[50vh] sm:h-[40vh] lg:h-[55vh]">
                                                     <img
                                                         src={place.portrait_img}
                                                         alt="place"

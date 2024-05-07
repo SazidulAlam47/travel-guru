@@ -11,7 +11,6 @@
   },
   "dependencies": {
     "@uidotdev/usehooks": "^2.4.1",
-    "@vis.gl/react-google-maps": "^0.10.0",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.4",
     "prop-types": "^15.8.1",
