@@ -4,6 +4,7 @@ import { DayPicker } from "react-day-picker";
 import formatDate from "../../utils/formatDate";
 import capitalize from "../../utils/capitalize";
 import "react-day-picker/dist/style.css";
+import { Helmet } from "react-helmet-async";
 
 const Booking = () => {
     const [origin, setOrigin] = useState("");
@@ -83,6 +84,9 @@ const Booking = () => {
 
     return (
         <div className="lg:h-[88vh] overflow-hidden">
+            <Helmet>
+                <title>Travel Guru | {place.name}</title>
+            </Helmet>
             <div className="lg:h-[100vh] absolute top-0 left-0 right-0 bg-slate-200 lg:bg-black -z-10 opacity-60"></div>
             <div className="hidden lg:block absolute top-0 right-0 left-0 -z-20 h-[100vh] overflow-hidden">
                 <img src={place.thumbnail_img} alt="place" className="w-full" />
@@ -142,6 +146,9 @@ const Booking = () => {
                                                 setSelectedFrom(date);
                                                 setShowFrom(false);
                                             }}
+                                            disabled={{
+                                                before: today,
+                                            }}
                                         />
                                     )}
                                     <input
@@ -181,6 +188,9 @@ const Booking = () => {
                                             onSelect={(date) => {
                                                 setSelectedTo(date);
                                                 setShowTo(false);
+                                            }}
+                                            disabled={{
+                                                before: selectedFrom,
                                             }}
                                         />
                                     )}

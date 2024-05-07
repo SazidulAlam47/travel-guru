@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import Swal from "sweetalert2";
 
 const Contact = () => {
@@ -13,8 +14,11 @@ const Contact = () => {
     };
 
     return (
-        <div className="container mx-auto px-3 md:px-6 py-8">
-            <div className="">
+        <div className="container mx-auto px-3 md:px-6">
+            <Helmet>
+                <title>Travel Guru | Contact Us</title>
+            </Helmet>
+            <div className="border-t-2 py-8">
                 <h1 className="text-4xl font-bold text-center mb-8">
                     Contact Us
                 </h1>

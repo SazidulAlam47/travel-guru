@@ -1,6 +1,7 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import SingleHotel from "./SingleHotel";
 import formatDate from "../../utils/formatDate";
+import { Helmet } from "react-helmet-async";
 
 const Hotels = () => {
     const allPlaces = useLoaderData();
@@ -11,10 +12,17 @@ const Hotels = () => {
 
     const formDate = new Date(booking.selectedFrom);
     const toDate = new Date(booking.selectedTo);
-    const days = toDate.getDate() - formDate.getDate() + 1;
+    // const days = toDate.getDate() - formDate.getDate() + 1;
+
+    const differenceInMs = toDate - formDate;
+    const millisecondsInADay = 1000 * 60 * 60 * 24;
+    const days = Math.ceil(differenceInMs / millisecondsInADay) + 1;
 
     return (
         <div className="container mx-auto px-3 md:px-6 pb-6">
+            <Helmet>
+                <title>Travel Guru | {place.name} Hotels</title>
+            </Helmet>
             <div className="border-t-2">
                 <h3 className="font-bold text-2xl pt-3">
                     Stay in {place.name}

@@ -1,8 +1,12 @@
+import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 
 const ErrorPage = () => {
     return (
         <div className="flex flex-col gap-3 justify-center items-center h-screen">
+            <Helmet>
+                <title>Travel Guru | 404</title>
+            </Helmet>
             <img src="/images/oops.png" alt="error" className="w-[30%]" />
             <h3 className="font-bold text-2xl">404 - PAGE NOT FOUND</h3>
             <p className="max-w-md text-center text-[#6A6A6A]">

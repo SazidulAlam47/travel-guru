@@ -5,6 +5,7 @@ import PropTypes from "prop-types";
 import { useState } from "react";
 import { MdArrowBackIosNew, MdArrowForwardIos } from "react-icons/md";
 import { useWindowSize } from "@uidotdev/usehooks";
+import { Helmet } from "react-helmet-async";
 
 const SampleNextArrow = ({ onClick }) => {
     return (
@@ -64,6 +65,9 @@ const Home = () => {
 
     return (
         <div className="lg:h-[88vh] overflow-hidden">
+            <Helmet>
+                <title>Travel Guru</title>
+            </Helmet>
             <div className="lg:h-[100vh] absolute top-0 left-0 right-0 bg-slate-200 lg:bg-black -z-10 opacity-60"></div>
             <div className="hidden lg:block absolute top-0 right-0 left-0 -z-20 h-[100vh] overflow-hidden">
                 <img
