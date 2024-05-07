@@ -123,11 +123,13 @@ const Home = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="lg:w-[45%] space-y-6 pr-4 px-3 md:px-0">
+                    <div className="lg:w-[45%] space-y-3 lg:space-y-6 px-3 md:px-0 mt-3 lg:mt-0">
                         <h2 className="font-bebasNeue text-7xl md:text-8xl">
                             {places[activeSlide].name}
                         </h2>
-                        <p>{places[activeSlide].description}</p>
+                        <p style={{ margin: 0 }}>
+                            {places[activeSlide].description}
+                        </p>
                         <Link
                             to={`/booking/${places[activeSlide].tag}`}
                             className="btn bg-primary px-7 border-0 hover:bg-[#ffb53d]"

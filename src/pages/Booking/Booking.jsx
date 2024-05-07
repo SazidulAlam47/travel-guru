@@ -266,14 +266,14 @@ const Booking = () => {
                         </form>
                     </div>
                     <div
-                        className={`lg:w-[45%] space-y-6 pr-4 px-3 md:px-0 ${
+                        className={`lg:w-[45%] space-y-3 lg:space-y-6 px-3 md:px-0 mt-5 lg:mt-0 ${
                             size.height <= 595 && "pt-[12vh]"
                         }`}
                     >
                         <h2 className="font-bebasNeue text-7xl md:text-8xl">
                             {place.name}
                         </h2>
-                        <p>{place.description}</p>
+                        <p style={{ margin: 0 }}>{place.description}</p>
                     </div>
                 </div>
             </div>
