@@ -41,7 +41,7 @@ const Home = () => {
         slidesToShow: 3,
         slidesToScroll: 1,
         initialSlide: 0,
-        autoplay: true,
+        // autoplay: true,
         autoplaySpeed: 4000,
         nextArrow: <SampleNextArrow />,
         prevArrow: <SamplePrevArrow />,
@@ -70,11 +70,16 @@ const Home = () => {
             </Helmet>
             <div className="lg:h-[100vh] absolute top-0 left-0 right-0 bg-slate-200 lg:bg-black -z-10 opacity-60"></div>
             <div className="hidden lg:block absolute top-0 right-0 left-0 -z-20 h-[100vh] overflow-hidden">
-                <img
-                    src={places[activeSlide].thumbnail_img}
-                    alt="place"
-                    className="w-full"
-                />
+                {places?.map((place, idx) => (
+                    <img
+                        key={place._id}
+                        src={place.thumbnail_img}
+                        alt={place.name}
+                        className={`w-full transition-all -z-10 ${
+                            idx === activeSlide ? "block" : "hidden"
+                        }`}
+                    />
+                ))}
             </div>
             <div className="container mx-auto px-3 md:px-6 text-black lg:text-white pt-2 pb-8 lg:pt-0 lg:pb-0">
                 <div className="flex flex-col lg:flex-row-reverse lg:pt-[12vh]">
