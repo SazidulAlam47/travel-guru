@@ -92,7 +92,7 @@ const Booking = () => {
                     <div className="lg:w-[55%]">
                         <form
                             onSubmit={handleBooking}
-                            className="lg:card-body py-4 lg:py-0 bg-white lg:w-9/12 mx-auto rounded-lg"
+                            className="lg:card-body py-4 bg-white lg:w-9/12 mx-auto rounded-lg"
                         >
                             <div className="form-control">
                                 <label className="label">
@@ -103,7 +103,7 @@ const Booking = () => {
                                 <input
                                     type="text"
                                     placeholder="Departure Point"
-                                    className="input input-lg bg-[#F2F2F2] rounded-lg text-black font-bold px-5 placeholder:font-medium"
+                                    className="input lg:input-lg bg-[#F2F2F2] rounded-lg text-black font-bold px-5 placeholder:font-medium"
                                     value={origin}
                                     onChange={(e) => setOrigin(e.target.value)}
                                 />
@@ -117,7 +117,7 @@ const Booking = () => {
                                 <input
                                     type="text"
                                     placeholder="Destination"
-                                    className="input input-lg bg-[#F2F2F2] rounded-lg text-black font-bold px-5 placeholder:font-medium"
+                                    className="input lg:input-lg bg-[#F2F2F2] rounded-lg text-black font-bold px-5 placeholder:font-medium"
                                     value={place.name}
                                     onChange={() => {}}
                                 />
@@ -135,7 +135,7 @@ const Booking = () => {
                                     </label>
                                     {showFrom && (
                                         <DayPicker
-                                            className="bg-white text-black inline-block p-5 rounded-lg absolute bottom-12 left-7 shadow-2xl z-20"
+                                            className="bg-white text-black inline-block p-5 rounded-lg absolute top-16 -left-2 lg:top-auto lg:bottom-12 lg:left-7 shadow-2xl z-30"
                                             mode="single"
                                             selected={selectedFrom}
                                             onSelect={(date) => {
@@ -147,7 +147,7 @@ const Booking = () => {
                                     <input
                                         type="text"
                                         placeholder="Select a date"
-                                        className={`input input-lg bg-[#F2F2F2] rounded-lg px-5 placeholder:font-medium ${
+                                        className={`input lg:input-lg bg-[#F2F2F2] rounded-lg px-5 placeholder:font-medium ${
                                             selectedFrom
                                                 ? "text-black font-bold"
                                                 : "text-[#818181] font-medium"
@@ -175,7 +175,7 @@ const Booking = () => {
                                     </label>
                                     {showTo && (
                                         <DayPicker
-                                            className="bg-white text-black inline-block p-5 rounded-lg absolute bottom-12 left-2 shadow-2xl z-20s"
+                                            className="bg-white text-black inline-block p-5 rounded-lg absolute top-16 -left-2 lg:top-auto lg:bottom-12 lg:left-2 shadow-2xl z-30"
                                             mode="single"
                                             selected={selectedTo}
                                             onSelect={(date) => {
@@ -187,7 +187,7 @@ const Booking = () => {
                                     <input
                                         type="text"
                                         placeholder="Select a date"
-                                        className={`input input-lg bg-[#F2F2F2] rounded-lg px-5 placeholder:font-medium ${
+                                        className={`input lg:input-lg bg-[#F2F2F2] rounded-lg px-5 placeholder:font-medium ${
                                             selectedTo
                                                 ? "text-black font-bold"
                                                 : "text-[#818181] font-medium"
@@ -207,7 +207,7 @@ const Booking = () => {
                                 </div>
                             </div>
                             <div className="form-control mt-6">
-                                <button className="btn btn-lg bg-primary hover:bg-[#ffb53d]">
+                                <button className="btn lg:btn-lg bg-primary hover:bg-[#ffb53d]">
                                     Start Booking
                                 </button>
                                 {error && (
