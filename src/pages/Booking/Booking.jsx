@@ -135,11 +135,7 @@ const Booking = () => {
                                 />
                             </div>
                             <div className="form-control">
-                                <label
-                                    className={`label ${
-                                        size.height <= 530 && "pt-0"
-                                    }`}
-                                >
+                                <label className="label">
                                     <span className="label-text text-[#818181] font-medium">
                                         Destination
                                     </span>
@@ -156,16 +152,12 @@ const Booking = () => {
                                 />
                             </div>
 
-                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">
+                            <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-3">
                                 <div
                                     className="form-control relative"
                                     ref={showFromRef}
                                 >
-                                    <label
-                                        className={`label ${
-                                            size.height <= 530 && "pt-0"
-                                        }`}
-                                    >
+                                    <label className="label">
                                         <span className="label-text text-[#818181] font-medium">
                                             From
                                         </span>
@@ -211,11 +203,7 @@ const Booking = () => {
                                     className="form-control relative"
                                     ref={showToRef}
                                 >
-                                    <label
-                                        className={`label ${
-                                            size.height <= 530 && "pt-0"
-                                        }`}
-                                    >
+                                    <label className="label">
                                         <span className="label-text text-[#818181] font-medium">
                                             To
                                         </span>
