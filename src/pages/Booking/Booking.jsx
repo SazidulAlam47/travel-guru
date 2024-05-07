@@ -197,6 +197,7 @@ const Booking = () => {
                                             setShowFrom(!showFrom);
                                             setShowTo(false);
                                         }}
+                                        readOnly
                                     />
                                 </div>
                                 <div
@@ -246,7 +247,7 @@ const Booking = () => {
                                             setShowTo(!showTo);
                                             setShowFrom(false);
                                         }}
-                                        required
+                                        readOnly
                                     />
                                 </div>
                             </div>
